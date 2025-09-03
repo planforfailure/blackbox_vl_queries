@@ -1,6 +1,7 @@
 ```yaml
 Total HTTP requests counter
 http_requests_total
+
 HTTP requests per service (rate over 5 min)
 rate(http_requests_total[5m]) by (service)
 
