@@ -1,5 +1,5 @@
 ## Blackbox/VictoriaLogs
-Probing of endpoints over HTTP, HTTPS, DNS, TCP, and ICMP
+Blackbox exporter generates metrics that depend on the response time of internal or external endpoints, such as HTTP/S, TCP, ICMP, DNS.
 
 To use VictoriaLogs with Blackbox Exporter probes (such as HTTP probes) outside Kubernetes, the typical flow is:
   - Blackbox Exporter runs probes on targets and exports Prometheus-format metrics.
