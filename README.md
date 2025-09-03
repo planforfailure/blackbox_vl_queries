@@ -47,7 +47,7 @@ modules:
     timeout: 15s
 ```
 
-**NOTE:** Above config requires Prometheus scrape config to get the relevant metrics from the blackbox endpoint. 
+#### Working Prometheus Scrape Config
 ```yaml
 global:
   scrape_interval:     15s
