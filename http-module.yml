@@ -1,0 +1,20 @@
+modules:
+  http_2xx:
+    prober: http
+    timeout: 15s
+    http:
+      method: GET
+      fail_if_not_ssl: true
+      preferred_ip_protocol: ip4
+      valid_http_versions:
+        - HTTP/1.1
+        - HTTP/2.0
+      valid_status_codes:
+        - 200
+        - 204
+      tls_config:
+        insecure_skip_verify: false
+        # Optional paths for CA or cert/key files
+        # ca_file: /path/to/ca.pem
+        # cert_file: /path/to/cert.pem
+        # key_file: /path/to/key.pem
