@@ -9,8 +9,10 @@ To use VictoriaLogs with Blackbox Exporter probes (such as HTTP probes) outside 
 - https://github.com/prometheus/blackbox_exporter
 - https://medium.com/trendyol-tech/probing-endpoints-with-blackbox-exporter-how-why-4417fce0993a
 - https://www.opsramp.com/guides/prometheus-monitoring/prometheus-blackbox-exporter/
+     
+    
 
-#### Sample Module
+#### HTTP Module
 ```yaml
 modules: 
   http_2xx: 
@@ -28,3 +30,21 @@ modules:
 ```  
 #### Defintion of Module
 ![screenshot](blackbox.png)
+
+
+####  TCP Module
+```yaml
+modules: 
+  tcp_connect: 
+    prober: tcp
+    tcp: 
+      ip_protocol_fallback: false
+      preferred_ip_protocol: ip4
+      tls: true
+      tls_config: 
+        insecure_skip_verify: true
+        server_name: myserver
+    timeout: 15s
+```
+
+**NOTE:** Above config requires Prometheus scrape config to get the relevant metrics from the blackbox endpoint. 
