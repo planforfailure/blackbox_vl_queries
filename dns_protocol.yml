@@ -1,0 +1,10 @@
+  dns_tcp:
+    prober: dns
+    timeout: 5s
+    dns:
+      query_name: "example.com"
+      query_type: "A"
+      transport_protocol: "tcp"       # Use TCP transport for DNS
+      preferred_ip_protocol: "ip4"
+      valid_rcodes:
+        - NOERROR
