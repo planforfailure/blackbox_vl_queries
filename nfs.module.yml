@@ -1,0 +1,9 @@
+modules:
+  nfs_tcp_connect:
+    prober: tcp
+    timeout: 5s
+    tcp:
+      ip_protocol_fallback: false
+      preferred_ip_protocol: ip4
+      # Port 2049 is the standard NFS TCP port
+      # Just specify target with port 2049 in Prometheus config
