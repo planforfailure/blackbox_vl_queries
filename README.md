@@ -49,22 +49,40 @@ modules:
 
 **NOTE:** Above config requires Prometheus scrape config to get the relevant metrics from the blackbox endpoint. 
 ```yaml
+global:
+  scrape_interval:     15s
+  evaluation_interval: 15s
+
 scrape_configs:
+  - job_name: 'prometheus'
+    static_configs:
+    - targets: ['prometheus:9090', 'blackbox:9115']
+
   - job_name: 'blackbox'
     metrics_path: /probe
     params:
-      module: [http_2xx]  # Look for a HTTP 200 response.
+      module: [http_2xx]
     static_configs:
-      - targets:
-        - http://prometheus.io    # Target to probe with http.
-        - https://prometheus.io   # Target to probe with https.
-        - http://example.com:8080 # Target to probe with http on port 8080.
+    - targets:
+      - https://gitlab.com
+      - https://morethancertified.com
+      - https://nationarail.co.uk
+      - https://lner.co.uk
+      - https://twitter.com
+      - https://theregister.com
+      - https://web.archive.org
+      - https://xe.com
+      - https://youtube.com
+      - https://yahoo.com
+      # Add yours here....
+
     relabel_configs:
-      - source_labels: [__address__]
-        target_label: __param_target
-      - source_labels: [__param_target]
-        target_label: instance
-      - target_label: __address__
-        replacement: 127.0.0.1:9115  # The blackbox exporter's real hostname:port.
+        - source_labels: [__address__]
+          target_label: __param_target
+        - source_labels: [__param_target]
+          target_label: instance
+        - target_label: __address__
+          replacement: blackbox:9115  # Replace with the actual address where Blackbox Exporter is running
+
 ```
 
