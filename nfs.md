@@ -23,7 +23,9 @@ rate(node_nfs4_client_operations_total{port="2049"}[5m])
 
 NFSv4 Mount Errors on Specific Port	
 node_nfs4_mount_errors_total{port="2049"}
-Network traffic on Port 2049	node_network_receive_bytes_total{port="2049"}
+
+Network traffic on Port 2049
+node_network_receive_bytes_total{port="2049"}
 
 General HTTP requests for VictoriaMetrics port	
 http_requests_total{instance=~":8428$"}
