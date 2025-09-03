@@ -27,3 +27,4 @@ modules:
     timeout: 15s
 ```  
 #### Defintion of Module
+![screenshot](blackbox.png)
