@@ -1,0 +1,8 @@
+modules:
+  dns_ip_probe:
+    prober: dns
+    timeout: 5s
+    dns:
+      query_name: "example.com"         # The DNS name to query (can customize)
+      query_type: "A"                   # Query type (A, AAAA, MX, etc.)
+      preferred_ip_protocol: "ip4"      # Use IPv4
