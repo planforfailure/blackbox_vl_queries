@@ -29,7 +29,7 @@ modules:
     timeout: 15s
 ```  
 #### Defintion of Module
-![screenshot](blackbox.png)
+![screenshot](img/blackbox.png)
 
 
 ####  TCP Module
@@ -82,6 +82,6 @@ scrape_configs:
           target_label: instance
         - target_label: __address__
           replacement: blackbox:9115  # Replace with the actual address where Blackbox Exporter is running
-
 ```
-
+#### Dashboard
+![screenshot](img/metrics_gf.png)
