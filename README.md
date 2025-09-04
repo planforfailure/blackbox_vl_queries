@@ -74,7 +74,6 @@ scrape_configs:
       - https://xe.com
       - https://youtube.com
       - https://yahoo.com
-      # Add yours here....
 
     relabel_configs:
         - source_labels: [__address__]
