@@ -47,7 +47,7 @@ modules:
     timeout: 15s
 ```
 
-#### Working Prometheus Scrape Config
+#### Prometheus Scrape Config  (only http_2xx)
 ```yaml
 global:
   scrape_interval:     15s
